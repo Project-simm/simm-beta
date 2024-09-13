@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='style/styles.css')}}">
+</head>
+<body>
+<div class="container">
+    <div class="section">
+      <h3>Video</h3>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="section">
+      <h3>Color</h3>
+      <input type="color">
+    </div>
+    <div class="section">
+      <h3>Night light</h3>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="section">
+      <h3>Natural light settings</h3>
+      <button>Configure</button>
+    </div>
+    <div class="section">
+      <h3>Scale and layout</h3>
+      <select>
+        <option value="100">100% (Recommended)</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+    <div class="section">
+      <h3>Text, app, and other item size</h3>
+      <select>
+        <option value="1600x900">1600 x 900</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+    <div class="section">
+      <h3>Orientation</h3>
+      <select>
+        <option value="landscape">Landscape</option>
+      </select>
+    </div>
+    <div class="section">
+      <h3>Multiple monitors</h3>
+      <button>Connect to a wireless video</button>
+      <p>Older monitors may not connect automatically. Select "Detect" to try to connect to them.</p>
+      <a href="/loading"><button>Detect</button></a>
+    </div>
+  </div>

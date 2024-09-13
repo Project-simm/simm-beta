@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com Opções</title>
+    <link rel="stylesheet" href="style_edit.css">
+</head>
+<body>
+
+<h1>Tabela de Itens</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ações</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Item 1</td>
+        <td class="actions">
+            <div class="dropdown">
+                <span class="three-dots">•••</span>
+                <div class="dropdown-content">
+                    <a href="#">Editar</a>
+                    <a href="#">Apagar</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Item 2</td>
+        <td class="actions">
+            <div class="dropdown">
+                <span class="three-dots">•••</span>
+                <div class="dropdown-content">
+                    <a href="#">Editar</a>
+                    <a href="#">Apagar</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="scripts.js"></script>
+</body>
+</html>

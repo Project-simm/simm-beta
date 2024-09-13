@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Projeto</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="left-section">
+            <div class="logo">
+                <button class="menu-btn" id="menu-close">
+                    <i class='bx bx-log-out-circle'></i>
+                </button>
+                <a href="#">{{ user_name }}</a>
+            </div>
+
+            <div class="sidebar">
+                <div class="item" id="active">
+                    <i class='bx bx-home-alt-2'></i>
+                    <a href="/">Home</a>
+                </div>
+                <div class="item">
+                    <i class='bx bx-plus-medical'></i>
+                    <a href="/cadastro">Grid</a>
+                </div>
+                <div class="item">
+                    <i class='bx bx-line-chart'></i>
+                    <a href="sist.pontos.html">Progress</a>
+                </div>
+                <div class="item">
+                    <i class='bx bx-log-out-circle'></i>
+                    <a href="index_login.html">Login</a>
+                </div>
+                <div class="item">
+                    <i class='bx bx-cog'></i>
+                    <a href="/settings">Settings</a>
+                </div>
+            </div>
+
+        </aside>
+
+        <main>
+            <header>
+                <button class="menu-btn" id="menu-open">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <h5>Hello <b>{{ user_name }}</b>, Bem Vindo de volta</h5>
+            </header>
+
+            <div class="separator">
+                <div class="info">
+                    <h3>Meus Serviços</h3>
+                    <a href="#">Ver tudo</a>
+                </div>
+                <div class="search">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+            
+            <div class="analytics">
+               <div class="item">
+                    <div class="progress">
+                        <div class="info">
+                           <a href="/cadastro"> <h5>Remedios</h5>
+                            <p>35 quantidade</p></a>
+                        </div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    <i class='bx bxs-injection'></i>
+                    
+                </div>
+                <a hidden href="sist.pontos.html">
+                <div class="item">
+                    <div class="progress">
+                        <div class="info">
+                            <a href="sist.pontos.html"><h5>Hisorico</h5>
+                            <p>45 Lessons</p>
+                        </div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    
+                    <i class='bx bx-history'></i>
+                </div>
+            </div>
+            </a>
+            <div class="separator">
+                <div class="info">
+                    <h3>Planejar</h3>
+                    <a href="#">Ver tudo</a>
+                </div>
+                <input type="date" value="2023-10-15">
+            </div>
+
+            <div class="planning">
+                <div class="item">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-book-alt'></i>
+                        </div>
+                        <ul>
+                        {%for medicamento in medicamentos%}
+                        <li>{{ medicamento.nome }} - {{medicamento.descricao}}</li>
+                        {%endfor%}
+                    </ul>
+                        </div>
+                        <div class="details">
+                            <h5>Remedios- Semana 1</h5>
+                            <p>8:00 - 10:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-vertical-rounded'></i>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-edit-alt'></i>
+                        </div>
+                        <div class="details">
+                            <h5>Paracetamol</h5>
+                            <p>13:00 - 14:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-vertical-rounded'></i>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-headphone'></i>
+                        </div>
+                        <div class="details">
+                            <h5>Dramin</h5>
+                            <p>15:00 - 16:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-vertical-rounded'></i>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="icon">
+                            <i class='bx bx-volume-low'></i>
+                        </div>
+                        <div class="details">
+                            <h5>Benzetacil</h5>
+                            <p>19:00 - 20:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-vertical-rounded'></i>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="{{url_for('static' , filename=('js/script.js'))}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Remedios</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style/style_gerenciador.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registro do remedio</h2>
+        <form class="registration-form" id="remedioForm">
+          <input type="search" name="nome" id="nome" placeholder="Digite seu remédio">
+          <label for="date">Data:</label>
+          <input type="date" id="date" name="date">
+          <label for="time">Hora:</label>
+          <input type="time" id="time" name="time">
+          <label for="Quantidade">Quantidade:</label>
+          <input type="number" name="Quantidade" id="qtd">
+          <br>
+          <label for="Repetir">Repetir alarme em quanto tempo? (Apenas selecione se tiver mais que um remédio)</label>
+          <input type="number" name="time-repeat" id="number">
+          <button type="submit" name="btnRegistrar">Registrar</button>
+      </form>
+      
+      <script>
+      document.getElementById("remedioForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+      
+          const nome = document.getElementById("nome").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+          const timeRepeat = document.getElementById("number").value;
+      
+          const user_id = 1; // Exemplo: ID do usuário atual logado
+      
+          fetch('/cadastro', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  nome: nome,
+                  date: date,
+                  time: time,
+                  time_repeat: timeRepeat,
+                  user_id: user_id
+              })
+          }).then(response => response.json())
+            .then(data => {
+              alert(data.message || data.error);
+            });
+      });
+      </script>
+      
+</body>
+</html>
